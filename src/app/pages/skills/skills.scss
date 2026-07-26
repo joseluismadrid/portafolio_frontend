@@ -23,18 +23,6 @@
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .skills {
   padding: 4rem 2rem;
   display: flex;
@@ -142,6 +130,9 @@
   .skills h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 2rem;
+    white-space: normal;
+    border-right: none;
+    animation: none;
   }
 
   .skills-grid {
@@ -172,7 +163,7 @@
 
     border-right: none;
 
-    animation: fadeUp 0.8s ease;
+    animation: none;
   }
 
   .skills-grid {

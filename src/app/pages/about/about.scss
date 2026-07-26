@@ -23,18 +23,6 @@
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ==========================
    SOBRE MI
 ========================== */
@@ -217,6 +205,12 @@
   .about,
   .technologies {
     padding: 2rem 1.5rem;
+
+    h1 {
+      white-space: normal;
+      border-right: none;
+      animation: none;
+    }
   }
 
   .tech-grid {
@@ -246,7 +240,7 @@
 
       white-space: normal;
       border-right: none;
-      animation: fadeUp 0.8s ease;
+      animation: none;
     }
 
     p {
@@ -261,7 +255,7 @@
     h1 {
       white-space: normal;
       border-right: none;
-      animation: fadeUp 0.8s ease;
+      animation: none;
     }
   }
 

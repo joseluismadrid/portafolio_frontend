@@ -23,18 +23,6 @@
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .contact {
   display: flex;
   justify-content: center;
@@ -217,6 +205,12 @@
     padding: 1.5rem;
     border-radius: 18px;
 
+    .contact__legend {
+      white-space: normal;
+      border-right: none;
+      animation: none;
+    }
+
     .contact__field {
       grid-template-columns: 1fr;
     }
@@ -249,7 +243,7 @@
       font-size: clamp(1.75rem, 9vw, 2.25rem);
       white-space: normal;
       border-right: none;
-      animation: fadeUp 0.8s ease;
+      animation: none;
     }
 
     .contact__description {

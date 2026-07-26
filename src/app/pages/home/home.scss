@@ -169,7 +169,7 @@
       0 0 20px $primary;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid $border;
+    border-right: 3px solid $primary;
     animation:
       typing 3s steps(20, end),
       blink 0.8s infinite;
@@ -209,6 +209,9 @@
     .titleContribution {
       margin-bottom: 4rem;
       font-size: clamp(1.8rem, 6vw, 3rem);
+      white-space: normal;
+      border-right: none;
+      animation: none;
     }
 
     .cardinfo {
@@ -242,9 +245,6 @@
     border-radius: 20px;
 
     .titleContribution {
-      white-space: normal;
-      border-right: none;
-      animation: none;
       margin-bottom: 3rem;
       font-size: 2rem;
     }

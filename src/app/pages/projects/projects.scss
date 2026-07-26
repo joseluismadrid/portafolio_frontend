@@ -230,6 +230,12 @@
   .projects {
     padding: 3rem 1rem;
 
+    &__title {
+      white-space: normal;
+      border-right: none;
+      animation: none;
+    }
+
     &__grid {
       grid-template-columns: 1fr;
     }
@@ -252,14 +258,6 @@
 }
 
 @include bp.down(bp.$screen-sm) {
-  .projects {
-    &__title {
-      white-space: normal;
-      border-right: none;
-      animation: none;
-    }
-  }
-
   .project-card {
     padding: 1rem;
   }
