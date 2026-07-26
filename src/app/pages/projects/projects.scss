@@ -1,0 +1,246 @@
+@use '../../../styles/colores.scss' as *;
+@use '../../../styles/formas.scss' as *;
+@use '../../../styles/typografia.scss' as *;
+
+/* ==========================
+   ANIMACIONES
+========================== */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* ==========================
+   PROYECTOS
+========================== */
+
+.projects {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+
+  &__title {
+    margin: 0 0 3rem;
+
+    color: $primary;
+
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: 3px solid $primary;
+
+    width: fit-content;
+
+    animation:
+      typing 3s steps(20, end),
+      blink 0.8s infinite;
+  }
+
+  &__grid {
+    width: 100%;
+    max-width: 1600px;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  padding: 1.5rem;
+  background: $card;
+
+  border: 1px solid $border;
+  border-radius: 16px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+
+    border-color: $primary;
+
+    box-shadow:
+      0 0 12px rgba($primary, 0.2),
+      0 0 24px rgba($primary, 0.1);
+  }
+
+  &__header {
+    h3 {
+      margin: 0;
+
+      color: $text-primary;
+
+      text-align: center;
+
+      font-size: clamp(1.35rem, 0.8vw + 1rem, 1.9rem);
+
+      font-weight: 700;
+
+      line-height: 1.2;
+    }
+  }
+
+  &__description {
+    margin: 0;
+
+    color: $text-secondary;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    text-wrap: pretty;
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .technology-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    padding: 0.5rem 0.75rem;
+
+    border: 1px solid rgba($primary, 0.3);
+    border-radius: 999px;
+
+    background: rgba($primary, 0.06);
+
+    color: $text-muted;
+
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    transition:
+      border-color 0.3s ease,
+      background-color 0.3s ease,
+      transform 0.3s ease;
+
+    &::before {
+      content: '✔';
+      color: $primary;
+      font-size: 0.75rem;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+
+      border-color: $primary;
+
+      background: rgba($primary, 0.15);
+    }
+  }
+
+  &__notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    margin-top: auto;
+
+    padding: 0.75rem 1rem;
+
+    border-left: 3px solid $primary;
+    border-radius: 8px;
+
+    background: rgba($primary, 0.06);
+
+    &-icon {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    &-text {
+      color: $text-secondary;
+
+      font-size: 0.85rem;
+      font-weight: 500;
+
+      line-height: 1.5;
+    }
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 1024px) {
+  .projects {
+    padding: 3rem 1.5rem;
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 3rem 1rem;
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-card {
+    padding: 1.25rem;
+
+    &__header {
+      h3 {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+}

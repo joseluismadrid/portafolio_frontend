@@ -1,0 +1,19 @@
+@use './styles/colores.scss' as *;
+@use './styles/typografia.scss' as *;
+@use './styles/formas.scss' as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
+  color: $text-primary;
+  font-size: $font-size-body;
+  scroll-behavior: smooth;
+  // overflow-x: hidden;
+  background: $background;
+  width: 100%;
+  min-width: 100%;
+}
+

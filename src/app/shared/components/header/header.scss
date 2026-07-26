@@ -1,0 +1,129 @@
+@use '../../../../styles/colores.scss' as *;
+@use '../../../../styles/formas.scss' as *;
+@use '../../../../styles/typografia.scss' as *;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  background: $navbar-bg;
+  box-shadow: 2px 4px 5px 1px $navbar-border;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+
+  img {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    background: transparent;
+  }
+}
+
+.hamburger {
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+
+  span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: $text-secondary;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+.menu {
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: $text-muted;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $primary-hover;
+      border: 1px solid $border;
+      transition: transform 0.3s ease;
+    }
+
+    &.active {
+      background: $primary;
+      color: $text-secondary;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+
+    &.open {
+      display: block;
+    }
+
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 0.5rem 0;
+    }
+
+    a {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+    }
+  }
+}

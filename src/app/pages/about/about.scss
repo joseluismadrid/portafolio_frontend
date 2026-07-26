@@ -1,0 +1,275 @@
+@use '../../../styles/colores.scss' as *;
+@use '../../../styles/formas.scss' as *;
+@use '../../../styles/typografia.scss' as *;
+
+/* ==========================
+   ANIMACIONES
+========================== */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================
+   SOBRE MI
+========================== */
+
+.about {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+
+  text-align: center;
+
+  h1 {
+    margin: 0;
+
+    color: $primary;
+
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: 3px solid $primary;
+
+    width: fit-content;
+
+    animation:
+      typing 3s steps(20, end),
+      blink 0.8s infinite;
+  }
+
+  p {
+    max-width: 70ch;
+
+    margin-top: 2rem;
+
+    color: $text-secondary;
+
+    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
+    line-height: 1.8;
+
+    white-space: pre-line;
+  }
+}
+
+/* ==========================
+   TECNOLOGIAS
+========================== */
+
+.technologies {
+  min-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+
+  text-align: center;
+  border-top: 2px solid $border;
+  border-radius: 50px;
+
+  h1 {
+    margin: 0;
+    margin-bottom: 4rem;
+
+    color: $primary;
+
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: 3px solid $primary;
+
+    width: fit-content;
+
+    animation:
+      typing 3s steps(20, end),
+      blink 0.8s infinite;
+  }
+}
+
+/* ==========================
+   GRID TECNOLOGIAS
+========================== */
+
+.tech-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 1.25rem;
+}
+
+/* ==========================
+   TARJETAS
+========================== */
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  padding: 1.25rem;
+
+  border: 1px solid $border;
+  border-radius: 16px;
+
+  background: $card;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    border-color: $primary;
+
+    box-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+  }
+
+  img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+  }
+
+  span {
+    margin: 0;
+
+    color: $text-secondary;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-align: center;
+  }
+}
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media (max-width: 768px) {
+  .about,
+  .technologies {
+    padding: 2rem 1.5rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .tech-card {
+    img {
+      width: 42px;
+      height: 42px;
+    }
+
+    span {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+/* ==========================
+   MOVILES
+========================== */
+
+@media (max-width: 480px) {
+  .about {
+    h1 {
+      font-size: 2rem;
+
+      white-space: nowrap;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+  }
+
+  .technologies {
+    padding: 3rem 1rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1rem;
+  }
+
+  .tech-card {
+    padding: 1rem;
+
+    img {
+      width: 36px;
+      height: 36px;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+  }
+}

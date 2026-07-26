@@ -1,0 +1,43 @@
+<section class="projects">
+
+  <h1 class="projects__title">
+    Proyectos
+  </h1>
+
+  <div class="projects__grid">
+
+    @for (project of proyecto; track $index) {
+
+    <article class="project-card">
+
+      <header class="project-card__header">
+        <h3>{{ project.titulo }}</h3>
+      </header>
+
+      <p class="project-card__description">
+        {{ project.descripcion }}
+      </p>
+      <div class="project-card__technologies">
+
+        @for (tech of project.tecnologias; track $index) {
+        <span class="technology-badge">
+          {{ tech }}
+        </span>
+        }
+
+      </div>
+      <div class="project-card__notice">
+        <span class="project-card__notice-icon">🔒</span>
+
+        <span class="project-card__notice-text">
+          {{ project.estado }}
+        </span>
+      </div>
+
+    </article>
+
+    }
+
+  </div>
+
+</section>

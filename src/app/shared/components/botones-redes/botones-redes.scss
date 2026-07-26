@@ -1,0 +1,53 @@
+@use '../../../../styles/colores.scss' as *;
+@use '../../../../styles/formas.scss' as *;
+@use '../../../../styles/typografia.scss' as *;
+
+.contenedorredes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.tooltip img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tooltip:hover img {
+  transform: scale(1.15);
+}
+
+.tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #111;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+
+  transition: opacity 0.3s ease;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

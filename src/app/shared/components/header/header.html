@@ -1,0 +1,24 @@
+<header>
+  <div class="logo">
+    <a routerLink="/home" routerLinkActive="active">
+      <img src="assets/img/logo.png" alt="Logo">
+    </a>
+  </div>
+
+  <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="menu" [class.open]="menuOpen">
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMenu()">Inicio</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">Sobre mi</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Proyectos</a></li>
+      <li><a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Habilidades</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contacto</a></li>
+    </ul>
+  </nav>
+</header>

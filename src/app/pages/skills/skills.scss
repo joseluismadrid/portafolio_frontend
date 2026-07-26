@@ -1,0 +1,167 @@
+@use '../../../styles/colores.scss' as *;
+@use '../../../styles/formas.scss' as *;
+@use '../../../styles/typografia.scss' as *;
+
+/* ==========================
+   HABILIDADES
+========================== */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100vh;
+
+  h1 {
+    margin: 0;
+
+    margin-bottom: 3rem;
+
+    color: $primary;
+
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: 3px solid $primary;
+
+    width: fit-content;
+
+    animation:
+      typing 3s steps(20, end),
+      blink 0.8s infinite;
+  }
+}
+
+.skills-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  padding: 1.5rem;
+
+  background: $card;
+
+  border: 1px solid $border;
+  border-radius: 16px;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $primary;
+    box-shadow:
+      0 0 10px rgba($primary, 0.2),
+      0 0 20px rgba($primary, 0.1);
+  }
+
+  h3 {
+    color: $primary;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: $text-secondary;
+
+    &::before {
+      content: '✓';
+      color: $primary;
+      margin-right: 0.75rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 3rem 1.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* ==========================
+   MOVIL
+========================== */
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 3rem 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    padding: 1.25rem;
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    li {
+      font-size: 0.95rem;
+    }
+  }
+}

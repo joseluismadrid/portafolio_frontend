@@ -1,0 +1,226 @@
+@use '../../../styles/colores.scss' as *;
+@use '../../../styles/formas.scss' as *;
+@use '../../../styles/typografia.scss' as *;
+
+/* ==========================
+   ANIMACIONES
+========================== */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.contact__fieldset {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 750px;
+
+  padding: 2rem;
+
+  border: 1px solid $border;
+  border-radius: 24px;
+
+  background: $background;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .contact__legend {
+    margin: 0;
+
+    color: $primary;
+
+    font-size: clamp(2rem, 2vw + 0.2rem, 4rem);
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: 3px solid $primary;
+
+    width: fit-content;
+
+    animation:
+      typing 3s steps(20, end),
+      blink 0.8s infinite;
+  }
+
+  .contact__description {
+    max-width: 70ch;
+
+    margin-top: 2rem;
+
+    color: $text-secondary;
+
+    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
+    line-height: 1.8;
+
+    white-space: pre-line;
+  }
+
+  .contact__field {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .contact__field label {
+    color: $text-primary;
+    font-size: 1.15rem;
+    padding-top: 0.75rem;
+  }
+
+  .contact__control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .contact__control input,
+  .contact__control select,
+  .contact__control textarea {
+    padding: 0.9rem 1rem;
+    border: 1px solid $border;
+    border-radius: 10px;
+    background: $background-secondary;
+    color: $text-primary;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+  }
+
+  .contact__control input::placeholder,
+  .contact__control textarea::placeholder {
+    color: $text-secondary;
+  }
+
+  .contact__control input:focus,
+  .contact__control select:focus,
+  .contact__control textarea:focus {
+    outline: none;
+    border-color: $border;
+    box-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+  }
+
+  .contact__control textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  .contact__error {
+    color: $error;
+    font-size: 0.875rem;
+  }
+
+  .contact__button {
+    align-self: flex-end;
+
+    padding: 1rem 2rem;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, $primary-hover, $border);
+
+    color: $text-primary;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+  }
+
+  .contact__button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 15px $primary-hover;
+  }
+
+  .contact__button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // ==========================
+  // LOADER
+  // ==========================
+
+  .contact__loader app-loader {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 2rem;
+
+    box-sizing: border-box;
+
+    pointer-events: all;
+  }
+
+  @media (max-width: 768px) {
+    .contact__field {
+      grid-template-columns: 1fr;
+    }
+
+    .contact__field label {
+      padding-top: 0;
+    }
+
+    .contact__button {
+      width: 100%;
+    }
+
+  .contact__loader {
+    padding-inline: 1rem;
+  }
+
+  }
+}

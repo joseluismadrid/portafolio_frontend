@@ -1,0 +1,21 @@
+@use'../../../../styles/colores.scss' as *;
+@use'../../../../styles/formas.scss' as *;
+@use'../../../../styles/typografia.scss' as *;
+
+
+footer {
+  width: 100%; // ← agregar esto para que ocupe todo el ancho
+  background-color: $background-secondary;
+  margin-top: auto;
+  box-shadow: 2px 4px 10px 18px $border;
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 1rem;
+    color:  $text-primary;
+    font-weight: $font-weight-medium;
+  }
+}

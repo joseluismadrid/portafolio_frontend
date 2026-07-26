@@ -1,0 +1,239 @@
+@use '../../../styles/colores.scss' as *;
+@use '../../../styles/formas.scss' as *;
+@use '../../../styles/typografia.scss' as *;
+.personinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  min-height: 100vh;
+  margin-top: 17px;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  text-align: center;
+  background: $transparent;
+  box-sizing: border-box;
+  h1 {
+    margin: 0;
+    color: $primary;
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid $primary;
+    width: fit-content;
+    animation:
+      typing 3s steps(20, end),
+      blink 0.8s infinite;
+  }
+  span {
+    font-size: $font-responsive;
+    color: $text-secondary;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    font-weight: $font-weight-bold;
+  }
+  p {
+    text-align: center;
+    max-width: 65ch;
+    width: 100%;
+    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.2rem);
+    line-height: 1.6;
+    margin-top: 1rem;
+    color: $text-secondary;
+  }
+  .personimg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+    &::before {
+      content: '';
+      position: absolute;
+      width: clamp(200px, 42vw, 280px);
+      height: clamp(200px, 42vw, 280px);
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba($background, 0.18) 0%,
+        rgba($background-secondary, 0.1) 45%,
+        rgba($primary, 0.04) 65%,
+        transparent 80%
+      );
+      filter: blur(35px);
+      transform: translateY(10px);
+      z-index: 0;
+      transition:
+        filter 0.35s ease,
+        transform 0.35s ease,
+        background 0.35s ease;
+    }
+    img {
+      position: relative;
+      z-index: 2;
+      width: clamp(185px, 35vw, 245px);
+      height: clamp(185px, 35vw, 245px);
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+      filter: brightness(0.9) contrast(1.05) saturate(1.05)
+        drop-shadow(0 8px 20px rgba($background-primary, 0.15));
+      transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+    }
+    &:hover {
+      &::before {
+        filter: blur(45px);
+        background: radial-gradient(
+          circle,
+          rgba($primary, 0.24) 0%,
+          rgba($primary, 0.12) 45%,
+          rgba($primary, 0.05) 65%,
+          transparent 80%
+        );
+        transform: translateY(8px) scale(1.05);
+      }
+      img {
+        transform: translateY(-4px) scale(1.03);
+        filter: brightness(1.05) contrast(1.06) saturate(1.08)
+          drop-shadow(0 14px 30px rgba($primary, 0.22));
+      }
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.95);
+      opacity: 0.6;
+    }
+  }
+}
+.contributions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  min-height: 100vh;
+  margin-top: 4rem;
+  padding: 1rem;
+  border-top: 2px solid $border;
+  border-radius: 50px;
+  text-align: center;
+  background: transparent;
+  box-sizing: border-box;
+
+  .titleContribution {
+     font-size: clamp(2rem, 3vw + 1rem, 4rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    max-width: 100%;
+    color: $primary;
+    text-transform: uppercase;
+    text-shadow:
+      0 2px 4px $card,
+      0 0 20px $primary;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid $border;
+    animation:
+      typing 3s steps(20, end),
+      blink 0.8s infinite;
+  }
+  .cardinfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 2rem;
+    width: min(1200px, 100%);
+    margin-inline: auto;
+    padding: 2rem;
+    justify-items: center;
+    box-sizing: border-box;
+  }
+} /* TABLETS */
+@media (max-width: 768px) {
+  .personinfo {
+    padding: 1.5rem;
+    h1 {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+    }
+    p {
+      max-width: 100%;
+    }
+  }
+  .contributions {
+    border-radius: 30px;
+    .titleContribution {
+      margin-bottom: 4rem;
+      font-size: clamp(1.8rem, 6vw, 3rem);
+    }
+    .cardinfo {
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+  }
+} /* MÓVILES */
+@media (max-width: 480px) {
+  .personinfo {
+    padding: 1rem;
+    h1 {
+      white-space: normal;
+      border-right: none;
+      animation: none;
+      font-size: 2rem;
+    }
+    span {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+  .contributions {
+    margin-top: 2rem;
+    border-radius: 20px;
+    .titleContribution {
+      white-space: normal;
+      border-right: none;
+      animation: none;
+      margin-bottom: 3rem;
+      font-size: 2rem;
+    }
+    .cardinfo {
+      grid-template-columns: 1fr;
+      padding: 0.5rem;
+      gap: 1rem;
+    }
+  }
+}

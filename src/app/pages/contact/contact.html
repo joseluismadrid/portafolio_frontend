@@ -1,0 +1,154 @@
+<form [formGroup]="contactForm" (ngSubmit)="enviar()" class="contact">
+
+  <fieldset class="contact__fieldset">
+
+    <legend class="contact__legend">
+      Contáctame
+    </legend>
+
+    <p class="contact__description">
+      ¿Tienes una idea, proyecto o necesidad tecnológica?
+      Envíame los detalles y me pondré en contacto contigo.
+    </p>
+
+    <!-- ===================== NOMBRE ===================== -->
+    <article class="contact__field">
+
+      <label for="nombre">Nombre Completo</label>
+
+      <div class="contact__control">
+
+        <input id="nombre" type="text" formControlName="nombre" placeholder="Ingresa tu nombre" />
+
+        @if (contactForm.get('nombre')?.touched && contactForm.get('nombre')?.errors) {
+
+        @if (contactForm.get('nombre')?.errors?.['required']) {
+        <small class="contact__error">
+          El nombre es obligatorio.
+        </small>
+        }
+
+        @else if (contactForm.get('nombre')?.errors?.['minlength']) {
+        <small class="contact__error">
+          Mínimo 3 caracteres.
+        </small>
+        }
+
+        @else if (contactForm.get('nombre')?.errors?.['pattern']) {
+        <small class="contact__error">
+          Solo se permiten letras y espacios.
+        </small>
+        }
+
+        }
+
+      </div>
+    </article>
+
+    <!-- ===================== EMAIL ===================== -->
+    <article class="contact__field">
+
+      <label for="email">Correo Electrónico</label>
+
+      <div class="contact__control">
+
+        <input id="email" type="email" formControlName="email" placeholder="correo@ejemplo.com" />
+
+        @if (contactForm.get('email')?.touched && contactForm.get('email')?.errors) {
+
+        @if (contactForm.get('email')?.errors?.['required']) {
+        <small class="contact__error">
+          El correo es obligatorio.
+        </small>
+        }
+
+        @else if (contactForm.get('email')?.errors?.['email']) {
+        <small class="contact__error">
+          Ingresa un correo válido.
+        </small>
+        }
+
+        }
+
+      </div>
+    </article>
+
+    <!-- ===================== SERVICIO ===================== -->
+    <article class="contact__field">
+
+      <label for="servicio">Servicio Requerido</label>
+
+      <div class="contact__control">
+
+        <select id="servicio" formControlName="servicio">
+
+          <option value="">
+            Selecciona una opción
+          </option>
+
+          @for (servicio of servicios; track servicio) {
+          <option [value]="servicio">
+            {{ servicio }}
+          </option>
+          }
+
+        </select>
+
+        @if (contactForm.get('servicio')?.touched && contactForm.get('servicio')?.errors?.['required']) {
+        <small class="contact__error">
+          Debes seleccionar un servicio.
+        </small>
+        }
+
+      </div>
+    </article>
+
+    <!-- ===================== MENSAJE ===================== -->
+    <article class="contact__field">
+
+      <label for="mensaje">Descripción del Proyecto</label>
+
+      <div class="contact__control">
+
+        <textarea id="mensaje" rows="6" formControlName="mensaje"
+          placeholder="Describe tu proyecto o necesidad"></textarea>
+
+        @if (contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.errors) {
+
+        @if (contactForm.get('mensaje')?.errors?.['required']) {
+        <small class="contact__error">
+          El mensaje es obligatorio.
+        </small>
+        }
+
+        @else if (contactForm.get('mensaje')?.errors?.['minlength']) {
+        <small class="contact__error">
+          El mensaje es demasiado corto.
+        </small>
+        }
+
+        }
+
+      </div>
+    </article>
+
+    <!-- ===================== BOTÓN ===================== -->
+    <button type="submit" class="contact__button" [disabled]="contactForm.invalid || contactForm.pending || loading">
+
+      @if (loading) {
+      Enviando
+      } @else {
+      Enviar
+      }
+
+    </button>
+
+    @if (loading) {
+    <div class="contact__loader">
+      <app-loader />
+    </div>
+    }
+
+  </fieldset>
+
+</form>

@@ -1,0 +1,21 @@
+<section class="skills">
+  <h1>Habilidades</h1>
+
+  <div class="skills-grid">
+
+    @for (habilidad of habilidades; track habilidad.titulo) {
+      <article class="skill-card">
+
+        <h3>{{ habilidad.titulo }}</h3>
+
+        <ul>
+          @for (item of habilidad.items; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+
+      </article>
+    }
+
+  </div>
+</section>

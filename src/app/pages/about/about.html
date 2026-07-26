@@ -1,0 +1,18 @@
+<section class="about" id="about">
+  <h1>Sobre mí</h1>
+
+  <p>{{ about }}</p>
+</section>
+
+<section class="technologies" id="technologies">
+  <h1>Tecnologías</h1>
+
+  <div class="tech-grid">
+    @for (data of tecnologias; track data.titulo) {
+      <article class="tech-card">
+        <img [src]="data.imagen" [alt]="data.titulo">
+        <span>{{ data.titulo }}</span>
+      </article>
+    }
+  </div>
+</section>
