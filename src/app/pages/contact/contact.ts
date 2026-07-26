@@ -55,10 +55,8 @@ export class Contact {
     'Desarrollo de aplicación',
     'Desarrollo de sitios web',
     'Automatización de procesos',
-    'Base de datos',
     'APIs e integraciones',
-    'Consultoria tecnológica',
-    'Mantenimiento y soporte'
+    'Enviar hoja de vida'
 
   ];
 
