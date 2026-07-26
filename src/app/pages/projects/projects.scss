@@ -1,6 +1,7 @@
 @use '../../../styles/colores.scss' as *;
 @use '../../../styles/formas.scss' as *;
 @use '../../../styles/typografia.scss' as *;
+@use '../../../styles/breakpoints.scss' as bp;
 
 /* ==========================
    ANIMACIONES
@@ -31,11 +32,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  width: 100%;
   margin-bottom: 4rem;
 
   &__title {
     margin: 0 0 3rem;
+    max-width: 100%;
+    text-align: center;
 
     color: $primary;
 
@@ -66,9 +69,9 @@
 
     display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 
-    gap: 1.5rem;
+    gap: 2rem;
   }
 }
 
@@ -81,6 +84,7 @@
   flex-direction: column;
   gap: 1rem;
   height: 100%;
+  min-width: 0;
   padding: 1.5rem;
   background: $card;
 
@@ -127,6 +131,7 @@
     line-height: 1.7;
 
     text-wrap: pretty;
+    overflow-wrap: anywhere;
   }
 
   &__technologies {
@@ -151,6 +156,7 @@
 
     font-size: 0.875rem;
     font-weight: 500;
+    overflow-wrap: anywhere;
 
     transition:
       border-color 0.3s ease,
@@ -206,12 +212,12 @@
    TABLET
 ========================== */
 
-@media (max-width: 1024px) {
+@include bp.down(bp.$screen-lg) {
   .projects {
     padding: 3rem 1.5rem;
 
     &__grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }
@@ -220,7 +226,7 @@
    MOBILE
 ========================== */
 
-@media (max-width: 768px) {
+@include bp.down(bp.$screen-md) {
   .projects {
     padding: 3rem 1rem;
 
@@ -242,5 +248,19 @@
       font-size: 0.95rem;
       line-height: 1.6;
     }
+  }
+}
+
+@include bp.down(bp.$screen-sm) {
+  .projects {
+    &__title {
+      white-space: normal;
+      border-right: none;
+      animation: none;
+    }
+  }
+
+  .project-card {
+    padding: 1rem;
   }
 }

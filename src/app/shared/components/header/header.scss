@@ -1,6 +1,7 @@
 @use '../../../../styles/colores.scss' as *;
 @use '../../../../styles/formas.scss' as *;
 @use '../../../../styles/typografia.scss' as *;
+@use '../../../../styles/breakpoints.scss' as bp;
 
 header {
   display: flex;
@@ -12,6 +13,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  width: 100%;
 }
 
 .logo {
@@ -29,7 +31,6 @@ header {
 }
 
 .hamburger {
-
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -95,7 +96,23 @@ header {
   }
 }
 
-@media (max-width: 768px) {
+@include bp.down(bp.$screen-lg) {
+  header {
+    padding: 0 1.5rem;
+  }
+
+  .menu {
+    ul {
+      gap: 0.75rem;
+    }
+
+    a {
+      padding: 1rem;
+    }
+  }
+}
+
+@include bp.down(bp.$screen-md) {
   header {
     padding: 1rem 1.5rem;
     flex-wrap: wrap;
@@ -125,5 +142,11 @@ header {
       padding: 0.85rem 1rem;
       border-radius: 8px;
     }
+  }
+}
+
+@include bp.down(bp.$screen-sm) {
+  header {
+    padding-inline: 1rem;
   }
 }

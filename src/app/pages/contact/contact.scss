@@ -1,6 +1,7 @@
 @use '../../../styles/colores.scss' as *;
 @use '../../../styles/formas.scss' as *;
 @use '../../../styles/typografia.scss' as *;
+@use '../../../styles/breakpoints.scss' as bp;
 
 /* ==========================
    ANIMACIONES
@@ -38,6 +39,7 @@
   display: flex;
   justify-content: center;
   padding: 2rem;
+  width: 100%;
 }
 
 .contact__fieldset {
@@ -204,8 +206,17 @@
 
     pointer-events: all;
   }
+}
 
-  @media (max-width: 768px) {
+@include bp.down(bp.$screen-md) {
+  .contact {
+    padding: 1.5rem;
+  }
+
+  .contact__fieldset {
+    padding: 1.5rem;
+    border-radius: 18px;
+
     .contact__field {
       grid-template-columns: 1fr;
     }
@@ -218,9 +229,37 @@
       width: 100%;
     }
 
-  .contact__loader {
-    padding-inline: 1rem;
+    .contact__loader {
+      padding-inline: 1rem;
+    }
+  }
+}
+
+@include bp.down(bp.$screen-sm) {
+  .contact {
+    padding: 1rem;
   }
 
+  .contact__fieldset {
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 16px;
+
+    .contact__legend {
+      font-size: clamp(1.75rem, 9vw, 2.25rem);
+      white-space: normal;
+      border-right: none;
+      animation: fadeUp 0.8s ease;
+    }
+
+    .contact__description {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .contact__button {
+      padding: 0.9rem 1rem;
+    }
   }
 }

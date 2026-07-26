@@ -1,6 +1,7 @@
 @use '../../../styles/colores.scss' as *;
 @use '../../../styles/formas.scss' as *;
 @use '../../../styles/typografia.scss' as *;
+@use '../../../styles/breakpoints.scss' as bp;
 
 /* ==========================
    HABILIDADES
@@ -39,12 +40,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 
   h1 {
     margin: 0;
 
     margin-bottom: 3rem;
+    max-width: 100%;
+    text-align: center;
 
     color: $primary;
 
@@ -76,7 +80,7 @@
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
 }
 
@@ -130,13 +134,24 @@
    TABLET
 ========================== */
 
-@media (max-width: 768px) {
+@include bp.down(bp.$screen-md) {
   .skills {
     padding: 3rem 1.5rem;
   }
 
+  .skills h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+
+    gap: 1.25rem;
+  }
+
+  .skill-card {
+    padding: 1.25rem;
   }
 }
 
@@ -144,24 +159,65 @@
    MOVIL
 ========================== */
 
-@media (max-width: 480px) {
+@include bp.down(bp.$screen-sm) {
   .skills {
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .skills h1 {
+    font-size: 1.8rem;
+
+    white-space: normal;
+    text-align: center;
+
+    border-right: none;
+
+    animation: fadeUp 0.8s ease;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .skill-card {
-    padding: 1.25rem;
+    padding: 1rem;
+
+    border-radius: 12px;
 
     h3 {
       font-size: 1.1rem;
     }
 
     li {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+}
+
+/* ==========================
+   PANTALLAS MUY PEQUEÑAS
+========================== */
+
+@include bp.down(bp.$screen-xs) {
+  .skills {
+    padding-inline: 0.75rem;
+  }
+
+  .skills h1 {
+    font-size: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 0.85rem;
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    li {
+      font-size: 0.85rem;
     }
   }
 }

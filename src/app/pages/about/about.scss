@@ -1,6 +1,7 @@
 @use '../../../styles/colores.scss' as *;
 @use '../../../styles/formas.scss' as *;
 @use '../../../styles/typografia.scss' as *;
+@use '../../../styles/breakpoints.scss' as bp;
 
 /* ==========================
    ANIMACIONES
@@ -40,6 +41,7 @@
 
 .about {
   min-height: 100vh;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -96,6 +98,7 @@
 
 .technologies {
   min-height: 90vh;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -146,7 +149,7 @@
 
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
 
   gap: 1.25rem;
 }
@@ -210,14 +213,14 @@
    TABLETS
 ========================== */
 
-@media (max-width: 768px) {
+@include bp.down(bp.$screen-md) {
   .about,
   .technologies {
     padding: 2rem 1.5rem;
   }
 
   .tech-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 
   .tech-card {
@@ -236,12 +239,14 @@
    MOVILES
 ========================== */
 
-@media (max-width: 480px) {
+@include bp.down(bp.$screen-sm) {
   .about {
     h1 {
       font-size: 2rem;
 
-      white-space: nowrap;
+      white-space: normal;
+      border-right: none;
+      animation: fadeUp 0.8s ease;
     }
 
     p {
@@ -252,10 +257,16 @@
 
   .technologies {
     padding: 3rem 1rem;
+
+    h1 {
+      white-space: normal;
+      border-right: none;
+      animation: fadeUp 0.8s ease;
+    }
   }
 
   .tech-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 1rem;
   }

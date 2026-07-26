@@ -1,14 +1,12 @@
 @use '../../../../styles/colores.scss' as *;
-
+@use '../../../../styles/breakpoints.scss' as bp;
 
 // ========================================
 // CONTENEDOR DEL LOADER
 // ========================================
 
 .contact__loader {
-
 }
-
 
 // ========================================
 // LOADER
@@ -34,17 +32,12 @@
   border: 1px solid $border;
   border-radius: 14px;
 
-  background: linear-gradient(
-    180deg,
-    $background-secondary,
-    $background
-  );
+  background: linear-gradient(180deg, $background-secondary, $background);
 
   box-shadow:
     0 2px 4px $card,
     0 0 20px $primary;
 }
-
 
 // ========================================
 // TEXTO DEL LOADER
@@ -62,7 +55,6 @@
 
   animation: text_713 3.5s ease both infinite;
 }
-
 
 // ========================================
 // BARRA DE CARGA
@@ -82,8 +74,7 @@
   background-color: $primary;
   border-radius: 50px;
 
-  box-shadow:
-    0 0 14px rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.45);
 
   animation: loading_713 3.5s ease both infinite;
 
@@ -102,7 +93,6 @@
     animation: loading2_713 3.5s ease both infinite;
   }
 }
-
 
 // ========================================
 // ANIMACIÓN DEL TEXTO
@@ -127,7 +117,6 @@
     transform: translateX(0);
   }
 }
-
 
 // ========================================
 // ANIMACIÓN PRINCIPAL DE LA BARRA
@@ -154,7 +143,6 @@
     width: 16px;
   }
 }
-
 
 // ========================================
 // ANIMACIÓN INTERNA DE LA BARRA
@@ -187,13 +175,11 @@
   }
 }
 
-
 // ========================================
 // RESPONSIVE
 // ========================================
 
-@media (max-width: 480px) {
-
+@include bp.down(bp.$screen-sm) {
   .loader {
     width: min(90%, 24rem);
     min-height: 6rem;
