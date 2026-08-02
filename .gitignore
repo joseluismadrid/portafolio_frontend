@@ -43,3 +43,6 @@ Thumbs.db
 
 .vscode
 .angular
+
+ng-serve-4200.err.log
+ng-serve-4200.log
