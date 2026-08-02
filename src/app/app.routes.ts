@@ -4,20 +4,18 @@ import { About } from './pages/about/about';
 import { Projects } from './pages/projects/projects';
 import { Skills } from './pages/skills/skills';
 import { Contact } from './pages/contact/contact';
-import { Loader } from './shared/components/loader/loader'
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-
-  },
-  {
-    path: 'home',
     component: Home,
     pathMatch: 'full',
     title: 'Home'
+  },
+  {
+    path: 'home',
+    redirectTo: '',
+    pathMatch: 'full'
   },
   {
     path: 'about',
@@ -34,13 +32,17 @@ export const routes: Routes = [
   {
     path: 'skills',
     component: Skills,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    title: 'Skills'
   },
   {
     path: 'contact',
     component: Contact,
     pathMatch: 'full',
     title: 'Contact'
-
   },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
