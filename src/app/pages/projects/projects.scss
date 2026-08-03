@@ -107,6 +107,7 @@
   }
 
   &__header {
+    h2,
     h3 {
       margin: 0;
 
@@ -245,6 +246,7 @@
     padding: 1.25rem;
 
     &__header {
+      h2,
       h3 {
         font-size: 1.25rem;
       }

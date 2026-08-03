@@ -99,7 +99,8 @@
   border-top: 2px solid $border;
   border-radius: 50px;
 
-  h1 {
+  h1,
+  h2 {
     margin: 0;
     margin-bottom: 4rem;
 
@@ -206,7 +207,8 @@
   .technologies {
     padding: 2rem 1.5rem;
 
-    h1 {
+    h1,
+    h2 {
       white-space: normal;
       border-right: none;
       animation: none;
@@ -252,7 +254,8 @@
   .technologies {
     padding: 3rem 1rem;
 
-    h1 {
+    h1,
+    h2 {
       white-space: normal;
       border-right: none;
       animation: none;

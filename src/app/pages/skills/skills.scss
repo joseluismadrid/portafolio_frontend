@@ -90,10 +90,11 @@
       0 0 20px rgba($primary, 0.1);
   }
 
-  h3 {
+  h2 {
     color: $primary;
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 1.25rem;
   }
 
   ul {
@@ -176,7 +177,7 @@
 
     border-radius: 12px;
 
-    h3 {
+    h2 {
       font-size: 1.1rem;
     }
 
@@ -203,7 +204,7 @@
   .skill-card {
     padding: 0.85rem;
 
-    h3 {
+    h2 {
       font-size: 1rem;
     }
 

@@ -10,7 +10,7 @@ export const routes: Routes = [
     path: '',
     component: Home,
     pathMatch: 'full',
-    title: 'Home'
+    title: 'Inicio | José Luis Madrid Londoño - Desarrollador Full Stack'
   },
   {
     path: 'home',
@@ -21,25 +21,25 @@ export const routes: Routes = [
     path: 'about',
     component: About,
     pathMatch: 'full',
-    title: 'About'
+    title: 'Sobre mí | José Luis Madrid Londoño - Desarrollador Full Stack'
   },
   {
     path: 'projects',
     component: Projects,
     pathMatch: 'full',
-    title: 'Projects'
+    title: 'Proyectos | José Luis Madrid Londoño - Software Developer'
   },
   {
     path: 'skills',
     component: Skills,
     pathMatch: 'full',
-    title: 'Skills'
+    title: 'Habilidades | José Luis Madrid Londoño - Desarrollador de Software'
   },
   {
     path: 'contact',
     component: Contact,
     pathMatch: 'full',
-    title: 'Contact'
+    title: 'Contacto | José Luis Madrid Londoño - Desarrollador Full Stack'
   },
   {
     path: '**',

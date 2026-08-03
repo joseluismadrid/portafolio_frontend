@@ -1,13 +1,14 @@
 <section class="personinfo">
   <div class="personimg">
- <img src="assets/img/foto.png" alt="José Luis Madrid Londoño - Desarrollador Full Stack"
-      loading="eager" decoding="async" fetchpriority="high"> </div>
-  <h1>Jose Luis Madrid Londoño</h1>
-<span>Software Developer</span>
+    <img src="assets/img/foto.png" alt="José Luis Madrid Londoño - Desarrollador Full Stack" width="245" height="245"
+      loading="eager" decoding="async" fetchpriority="high">
+  </div>
+  <h1>José Luis Madrid Londoño</h1>
+  <span>Software Developer</span>
   <p> {{Perfil}} </p> <app-botones-redes></app-botones-redes>
 </section>
 <section class="contributions">
-  <h1 class="titleContribution">contribuciones</h1>
+  <h2 class="titleContribution">Contribuciones</h2>
   <div class="cardinfo"> @for (data of contributions; track $index) { <app-cards [titulo]="data.titulo"
       [descripcion]="data.descripcion" [imagen]="data.imagen"> </app-cards> } </div>
 </section>

@@ -22,13 +22,13 @@ export class Home {
     {
       titulo: 'Revisión de código',
       descripcion: 'Análisis y validación del código escrito por otros miembros del equipo para mantener estándares de calidad y seguridad.',
-      imagen: 'assets/img/revision.png'
+      imagen: 'assets/img/revision.svg'
     },
 
     {
       titulo: 'Desarrollo Frontend y Backend',
       descripcion: 'Trabajan juntos mediante una conexión constante para procesar y mostrar la información al usuario.',
-      imagen: 'assets/img/frontend.png'
+      imagen: 'assets/img/frontend.svg'
     },
     {
       titulo: 'Arquitectura de Software',
@@ -39,12 +39,12 @@ export class Home {
     {
       titulo: 'Pruebas de rendimiento y seguridad',
       descripcion: 'Evaluaciones críticas dentro del Aseguramiento de Calidad (QA) que garantizan que el software sea rápido, estable y resistente a ataques antes de su lanzamiento al público',
-      imagen: 'assets/img/seguridad.png'
+      imagen: 'assets/img/seguridad.svg'
     },
     {
       titulo: 'Diseño UI/UX',
       descripcion: 'Disciplina que define cómo se ve y cómo se siente un producto digital (como una aplicación, sitio web o software) al ser utilizado por una persona.',
-      imagen: 'assets/img/experiencia.png'
+      imagen: 'assets/img/experiencia.svg'
     },
   ];
 
@@ -53,3 +53,4 @@ export class Home {
 
 
 }
+

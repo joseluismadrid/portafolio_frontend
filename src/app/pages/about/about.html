@@ -5,12 +5,12 @@
 </section>
 
 <section class="technologies" id="technologies">
-  <h1>Tecnologías</h1>
+  <h2>Tecnologías</h2>
 
   <div class="tech-grid">
     @for (data of tecnologias; track data.titulo) {
       <article class="tech-card">
-        <img [src]="data.imagen" [alt]="data.titulo">
+        <img [src]="data.imagen" [alt]="data.titulo" loading="lazy" decoding="async" width="60" height="60">
         <span>{{ data.titulo }}</span>
       </article>
     }

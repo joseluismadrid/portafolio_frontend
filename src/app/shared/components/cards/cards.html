@@ -1,8 +1,8 @@
 <div class="container">
 <div class="card">
   <div class="card-image">
- <img [src]="imagen" [alt]="titulo">
-</div>
+    <img [src]="imagen" [alt]="titulo" loading="lazy" decoding="async" width="80" height="80">
+  </div>
   <p class="card-title">{{titulo}}</p>
   <p class="card-body">
     {{descripcion}}

@@ -74,6 +74,15 @@
       blink 0.8s infinite;
   }
 
+  .contact__heading {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-transform: inherit;
+    text-shadow: inherit;
+  }
+
   .contact__description {
     max-width: 70ch;
 
