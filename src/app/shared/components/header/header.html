@@ -5,13 +5,20 @@
     </a>
   </div>
 
-  <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu">
+  <button
+    class="hamburger"
+    (click)="toggleMenu()"
+    [class.open]="menuOpen"
+    [attr.aria-expanded]="menuOpen"
+    [attr.aria-label]="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
+    aria-controls="main-navigation"
+  >
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <nav class="menu" [class.open]="menuOpen" aria-label="Navegación principal">
+  <nav id="main-navigation" class="menu" [class.open]="menuOpen" aria-label="Navegación principal">
     <ul>
       <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
           (click)="closeMenu()">Inicio</a></li>
