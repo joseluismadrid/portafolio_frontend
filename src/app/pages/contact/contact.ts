@@ -72,6 +72,7 @@ export class Contact {
 
           Validators.required,
           Validators.minLength(3),
+          Validators.maxLength(100),
 
           Validators.pattern(
             '^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+( [A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*$'
@@ -89,7 +90,8 @@ export class Contact {
         [
 
           Validators.required,
-          Validators.email
+          Validators.email,
+          Validators.maxLength(100)
 
         ]
 
@@ -112,7 +114,8 @@ export class Contact {
         [
 
           Validators.required,
-          Validators.minLength(10)
+          Validators.minLength(10),
+          Validators.maxLength(2000)
 
         ]
 
