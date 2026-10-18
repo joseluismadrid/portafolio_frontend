@@ -1,5 +1,4 @@
 @use '../../../../styles/colores.scss' as *;
-@use '../../../../styles/formas.scss' as *;
 @use '../../../../styles/typografia.scss' as *;
 @use '../../../../styles/breakpoints.scss' as bp;
 
@@ -76,16 +75,20 @@ header {
   a {
     display: block;
     padding: 1rem 1.5rem;
+    border: 1px solid transparent;
     border-radius: 16px;
     text-decoration: none;
     color: $text-muted;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition:
+      color 0.3s ease,
+      border-color 0.3s ease;
 
+    // El borde se declara transparente en el estado base para que al aparecer
+    // en `hover` no desplace el resto de la navegación 1px.
     &:hover {
       color: $primary-hover;
-      border: 1px solid $border;
-      transition: transform 0.3s ease;
+      border-color: $border;
     }
 
     &.active {

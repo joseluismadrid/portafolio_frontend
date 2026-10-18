@@ -1,14 +1,29 @@
 <section class="personinfo">
   <div class="personimg">
-    <img src="assets/img/foto.png" alt="José Luis Madrid Londoño - Desarrollador Full Stack" width="245" height="245"
-      loading="eager" decoding="async" fetchpriority="high">
+    <picture>
+      <source srcset="assets/img/foto.webp" type="image/webp" />
+      <img
+        src="assets/img/foto.png"
+        alt="José Luis Madrid Londoño - Desarrollador Full Stack"
+        width="245"
+        height="245"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </picture>
   </div>
   <h1>José Luis Madrid Londoño</h1>
   <span>Software Developer</span>
-  <p> {{Perfil}} </p> <app-botones-redes></app-botones-redes>
+  <p>{{ perfil }}</p>
+  <app-botones-redes></app-botones-redes>
 </section>
 <section class="contributions">
   <h2 class="titleContribution">Contribuciones</h2>
-  <div class="cardinfo"> @for (data of contributions; track $index) { <app-cards [titulo]="data.titulo"
-      [descripcion]="data.descripcion" [imagen]="data.imagen"> </app-cards> } </div>
+  <div class="cardinfo">
+    @for (data of contributions; track $index) {
+      <app-cards [titulo]="data.titulo" [descripcion]="data.descripcion" [imagen]="data.imagen">
+      </app-cards>
+    }
+  </div>
 </section>

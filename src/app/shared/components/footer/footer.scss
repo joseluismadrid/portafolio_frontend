@@ -1,7 +1,5 @@
-@use'../../../../styles/colores.scss' as *;
-@use'../../../../styles/formas.scss' as *;
-@use'../../../../styles/typografia.scss' as *;
-
+@use '../../../../styles/colores.scss' as *;
+@use '../../../../styles/typografia.scss' as *;
 
 footer {
   width: 100%; // ← agregar esto para que ocupe todo el ancho
@@ -15,7 +13,7 @@ footer {
     letter-spacing: 0.5px;
     text-align: center;
     padding: 1rem;
-    color:  $text-primary;
+    color: $text-primary;
     font-weight: $font-weight-medium;
   }
 }

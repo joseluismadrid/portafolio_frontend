@@ -2,10 +2,8 @@
   <h1>Habilidades</h1>
 
   <div class="skills-grid">
-
     @for (habilidad of habilidades; track habilidad.titulo) {
       <article class="skill-card">
-
         <h2>{{ habilidad.titulo }}</h2>
 
         <ul>
@@ -13,9 +11,7 @@
             <li>{{ item }}</li>
           }
         </ul>
-
       </article>
     }
-
   </div>
 </section>

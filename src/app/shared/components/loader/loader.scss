@@ -2,13 +2,6 @@
 @use '../../../../styles/breakpoints.scss' as bp;
 
 // ========================================
-// CONTENEDOR DEL LOADER
-// ========================================
-
-.contact__loader {
-}
-
-// ========================================
 // LOADER
 // ========================================
 
@@ -189,5 +182,28 @@
 
   .loader-text {
     font-size: 0.7rem;
+  }
+}
+
+// ========================================
+// MOVIMIENTO REDUCIDO
+// ========================================
+
+// El loader sigue siendo un indicador de progreso, así que no se oculta: se
+// queda estático (barra llena y texto sin desplazamiento) para quien pide menos
+// movimiento.
+@media (prefers-reduced-motion: reduce) {
+  .loader-text {
+    animation: none;
+  }
+
+  .load {
+    width: 100%;
+    animation: none;
+
+    &::before {
+      width: 100%;
+      animation: none;
+    }
   }
 }

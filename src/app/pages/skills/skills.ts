@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
-  imports: [],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })
@@ -14,8 +13,8 @@ export class Skills {
         'Desarrollo de interfaces responsivas',
         'Componentes reutilizables',
         'Diseño adaptativo',
-        'Consumo de APIs REST'
-      ]
+        'Consumo de APIs REST',
+      ],
     },
     {
       titulo: 'Backend',
@@ -23,17 +22,12 @@ export class Skills {
         'Diseño de APIs REST',
         'Arquitectura por capas',
         'Autenticación y autorización',
-        'Integración de bases de datos'
-      ]
+        'Integración de bases de datos',
+      ],
     },
     {
       titulo: 'Bases de Datos',
-      items: [
-        'Modelado de datos',
-        'Consultas SQL',
-        'Optimización de consultas',
-        'MongoDB y MySQL'
-      ]
+      items: ['Modelado de datos', 'Consultas SQL', 'Optimización de consultas', 'MongoDB y MySQL'],
     },
     {
       titulo: 'Profesionales',
@@ -41,8 +35,8 @@ export class Skills {
         'Resolución de problemas',
         'Pensamiento analítico',
         'Trabajo en equipo',
-        'Aprendizaje continuo'
-      ]
-    }
+        'Aprendizaje continuo',
+      ],
+    },
   ];
 }

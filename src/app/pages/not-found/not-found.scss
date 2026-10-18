@@ -1,0 +1,75 @@
+@use '../../../styles/colores.scss' as *;
+@use '../../../styles/typografia.scss' as *;
+@use '../../../styles/titulos.scss' as *;
+@use '../../../styles/breakpoints.scss' as bp;
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.5rem;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 2rem;
+
+  text-align: center;
+}
+
+.not-found__title {
+  @include titulo-neon;
+}
+
+.not-found__message {
+  max-width: 60ch;
+  margin: 0;
+
+  color: $text-secondary;
+
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
+  line-height: 1.8;
+}
+
+.not-found__link {
+  padding: 1rem 2rem;
+
+  border: 1px solid $border;
+  border-radius: 10px;
+
+  background: $card;
+
+  color: $text-primary;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    border-color: $primary;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 0 12px rgba($primary, 0.2),
+      0 0 24px rgba($primary, 0.1);
+  }
+}
+
+@include bp.down(bp.$screen-md) {
+  .not-found {
+    padding: 1.5rem;
+  }
+
+  .not-found__title {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+
+    @include titulo-neon-estatico;
+  }
+}

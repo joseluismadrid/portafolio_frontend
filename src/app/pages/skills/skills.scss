@@ -1,27 +1,11 @@
 @use '../../../styles/colores.scss' as *;
-@use '../../../styles/formas.scss' as *;
 @use '../../../styles/typografia.scss' as *;
+@use '../../../styles/titulos.scss' as *;
 @use '../../../styles/breakpoints.scss' as bp;
 
 /* ==========================
    HABILIDADES
 ========================== */
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
 
 .skills {
   padding: 4rem 2rem;
@@ -32,33 +16,10 @@
   min-height: 100vh;
 
   h1 {
-    margin: 0;
+    @include titulo-neon;
 
     margin-bottom: 3rem;
-    max-width: 100%;
     text-align: center;
-
-    color: $primary;
-
-    font-size: clamp(2rem, 3vw + 1rem, 4rem);
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    text-shadow:
-      0 2px 4px $card,
-      0 0 20px $primary;
-
-    overflow: hidden;
-    white-space: nowrap;
-
-    border-right: 3px solid $primary;
-
-    width: fit-content;
-
-    animation:
-      typing 3s steps(20, end),
-      blink 0.8s infinite;
   }
 }
 
@@ -80,7 +41,10 @@
   border: 1px solid $border;
   border-radius: 16px;
 
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
@@ -109,12 +73,18 @@
     margin-bottom: 0.75rem;
     color: $text-secondary;
 
+    // Marca de verificación dibujada con bordes. Antes era el carácter '✓',
+    // que el lector de pantalla puede anunciar como parte del texto.
     &::before {
-      content: '✓';
-      color: $primary;
+      content: '';
+      flex: none;
+      width: 0.5rem;
+      height: 0.28rem;
       margin-right: 0.75rem;
-      font-weight: bold;
-      flex-shrink: 0;
+      margin-top: -0.15rem;
+      border-left: 2px solid $primary;
+      border-bottom: 2px solid $primary;
+      transform: rotate(-45deg);
     }
   }
 }
@@ -131,9 +101,8 @@
   .skills h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 2rem;
-    white-space: normal;
-    border-right: none;
-    animation: none;
+
+    @include titulo-neon-estatico;
   }
 
   .skills-grid {
@@ -158,13 +127,9 @@
 
   .skills h1 {
     font-size: 1.8rem;
-
-    white-space: normal;
     text-align: center;
 
-    border-right: none;
-
-    animation: none;
+    @include titulo-neon-estatico;
   }
 
   .skills-grid {

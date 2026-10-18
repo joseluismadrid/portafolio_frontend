@@ -1,0 +1,81 @@
+@use './colores.scss' as *;
+
+// ========================================
+// @keyframes compartidos
+// ========================================
+//
+// Se declaran aquí (y no copiados en cada componente) para tener una única
+// fuente de verdad. Angular encapsula los `@keyframes` de un componente
+// renombrándolos a `_ngcontent-<scope>-typing` y reescribiendo el `animation`
+// del propio componente, de modo que cada hoja que incluya el mixin se lleva
+// su copia ya aislada: no hay colisión entre páginas ni CSS muerto global.
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+// ========================================
+// TÍTULO CON EFECTO DE MÁQUINA DE ESCRIBIR
+// ========================================
+//
+// Antes este bloque estaba copiado (y ya ligeramente divergente) en
+// home, about, projects, skills y contact.
+//
+// `$font-size` se parametriza porque cada página usaba un `clamp()` distinto.
+// Los márgenes se dejan fuera a propósito: cada sección necesita los suyos y
+// se declaran después de incluir el mixin.
+
+@mixin titulo-neon($font-size: clamp(2rem, 3vw + 1rem, 4rem)) {
+  margin: 0;
+  max-width: 100%;
+
+  color: $primary;
+
+  font-size: $font-size;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 2px 4px $card,
+    0 0 20px $primary;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  border-right: 3px solid $primary;
+
+  width: fit-content;
+
+  animation:
+    typing 3s steps(20, end),
+    blink 0.8s infinite;
+
+  // El efecto es decorativo y se repite indefinidamente: se desactiva para
+  // quien pide menos movimiento. Se conserva el mismo estado estático que ya
+  // aplicaban los breakpoints de móvil.
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    white-space: normal;
+    border-right: none;
+  }
+}
+
+/// Estado estático del título, usado por los breakpoints de móvil.
+@mixin titulo-neon-estatico {
+  white-space: normal;
+  border-right: none;
+  animation: none;
+}

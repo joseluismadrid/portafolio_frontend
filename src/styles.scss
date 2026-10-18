@@ -1,6 +1,5 @@
 @use './styles/colores.scss' as *;
 @use './styles/typografia.scss' as *;
-@use './styles/formas.scss' as *;
 
 *,
 *::before,
@@ -16,8 +15,40 @@ body {
   color: $text-primary;
   font-size: $font-size-body;
   scroll-behavior: smooth;
-  // overflow-x: hidden;
   background: $background;
   width: 100%;
-  min-width: 100%;
+}
+
+// Indicador de foco visible y consistente para navegación por teclado.
+// Los campos del formulario de contacto conservan su propio halo de foco.
+:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+// Enlace para saltar el encabezado con el teclado.
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: 0.75rem 1.25rem;
+
+  background: $card;
+  color: $text-primary;
+
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+
+  border: 1px solid $primary;
+  border-radius: 0 0 12px 0;
+
+  transform: translateY(-120%);
+  transition: transform 0.2s ease-out;
+
+  z-index: 100;
+
+  &:focus-visible {
+    transform: translateY(0);
+  }
 }

@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://joseluismadrid.com/sitemap.xml
+Sitemap: https://www.joseluismadrid.com/sitemap.xml

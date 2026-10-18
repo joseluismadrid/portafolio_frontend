@@ -1,0 +1,8 @@
+# pnpm genera y mantiene este archivo: reformatearlo produce un diff enorme sin
+# cambiar ninguna resolución de dependencias.
+/pnpm-lock.yaml
+
+# Salidas de build y caché (ya están en .gitignore, se listan por claridad).
+/dist
+/.angular
+/coverage

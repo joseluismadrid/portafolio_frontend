@@ -9,10 +9,17 @@
 
   <div class="tech-grid">
     @for (data of tecnologias; track data.titulo) {
-      <article class="tech-card">
-        <img [src]="data.imagen" [alt]="data.titulo" loading="lazy" decoding="async" width="60" height="60">
+      <div class="tech-card">
+        <img
+          [src]="data.imagen"
+          [alt]="data.titulo"
+          loading="lazy"
+          decoding="async"
+          width="48"
+          height="48"
+        />
         <span>{{ data.titulo }}</span>
-      </article>
+      </div>
     }
   </div>
 </section>

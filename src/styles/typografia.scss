@@ -1,18 +1,24 @@
-//size de fuentes
-$font-size-title: 32px;
-$font-size-body: 16px;
-$font-size-small: 12px;
-$font-size-large: 50px;
-$font-responsive:  clamp(1rem, 1vw + 0.8rem, 1.5rem);
+// ========================================
+// TIPOGRAFÍA
+// ========================================
 
-// Tipologia de fuentes
-$font-family: 'Roboto', sans-serif;
+// Pila del sistema: no requiere descargar ninguna fuente, así que no añade
+// peticiones ni bloqueo de render. 'Roboto' se mantiene como respaldo para las
+// plataformas que la tengan instalada.
+$font-family:
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
+
+// Tamaños
+$font-size-body: 16px;
+$font-responsive: clamp(1rem, 1vw + 0.8rem, 1.5rem);
 
 // Grosor de fuentes
 $font-weight-medium: 500;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
-
-
-// espaciado de lineas vertica
-$line-height: 1.5;

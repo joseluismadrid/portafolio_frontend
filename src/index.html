@@ -1,198 +1,147 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="utf-8" />
 
-<head>
-  <meta charset="utf-8">
-
-  <!-- ==========================
+    <!-- ==========================
        INFORMACIÓN GENERAL
   ========================== -->
 
-  <meta
-    name="author"
-    content="Jose Luis Madrid Londoño"
-  >
+    <meta name="author" content="Jose Luis Madrid Londoño" />
 
-  <meta
-    name="robots"
-    content="index, follow"
-  >
+    <meta name="robots" content="index, follow" />
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta
-    name="description"
-    content="Portafolio de Jose Luis Madrid Londoño, desarrollador de software Full Stack especializado en desarrollo web, aplicaciones modernas, APIs REST y soluciones tecnológicas."
-  >
+    <meta
+      name="description"
+      content="Portafolio de Jose Luis Madrid Londoño, desarrollador de software Full Stack especializado en desarrollo web, aplicaciones modernas, APIs REST y soluciones tecnológicas."
+    />
 
-  <!-- URL principal -->
-  <link
-    rel="canonical"
-    href="https://www.joseluismadrid.com/"
-  >
+    <!-- URL principal -->
+    <link rel="canonical" href="https://www.joseluismadrid.com/" />
 
-  <!-- Favicon -->
-  <link
-    rel="icon"
-    type="image/x-icon"
-    href="assets/icons/favicon.ico"
-  >
+    <meta name="theme-color" content="#020617" />
 
-  <!-- ==========================
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+
+    <link rel="manifest" href="assets/icons/site.webmanifest" />
+
+    <!-- ==========================
        OPEN GRAPH
        Facebook / WhatsApp / LinkedIn
   ========================== -->
 
-  <meta
-    property="og:title"
-    content="Jose Luis Madrid Londoño | Desarrollador de Software"
-  >
+    <meta property="og:title" content="Jose Luis Madrid Londoño | Desarrollador de Software" />
 
-  <meta
-    property="og:description"
-    content="Portafolio de Jose Luis Madrid Londoño, desarrollador de software Full Stack especializado en desarrollo web, APIs REST y soluciones tecnológicas modernas."
-  >
+    <meta
+      property="og:description"
+      content="Portafolio de Jose Luis Madrid Londoño, desarrollador de software Full Stack especializado en desarrollo web, APIs REST y soluciones tecnológicas modernas."
+    />
 
-  <meta
-    property="og:image"
-    content="https://www.joseluismadrid.com/assets/img/preview.webp"
-  >
+    <meta property="og:image" content="https://www.joseluismadrid.com/assets/img/preview.webp" />
 
-  <meta
-    property="og:url"
-    content="https://www.joseluismadrid.com/"
-  >
+    <meta property="og:url" content="https://www.joseluismadrid.com/" />
 
-  <meta
-    property="og:type"
-    content="website"
-  >
+    <meta property="og:type" content="website" />
 
-  <meta
-    property="og:locale"
-    content="es_CO"
-  >
+    <meta property="og:locale" content="es_CO" />
 
-  <!-- ==========================
+    <!-- ==========================
        TWITTER / X CARD
   ========================== -->
 
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <meta
-    name="twitter:title"
-    content="Jose Luis Madrid Londoño | Desarrollador de Software"
-  >
+    <meta name="twitter:title" content="Jose Luis Madrid Londoño | Desarrollador de Software" />
 
-  <meta
-    name="twitter:description"
-    content="Portafolio de Jose Luis Madrid Londoño, desarrollador de software Full Stack especializado en desarrollo web, APIs REST y soluciones tecnológicas modernas."
-  >
+    <meta
+      name="twitter:description"
+      content="Portafolio de Jose Luis Madrid Londoño, desarrollador de software Full Stack especializado en desarrollo web, APIs REST y soluciones tecnológicas modernas."
+    />
 
-  <meta
-    name="twitter:image"
-    content="https://www.joseluismadrid.com/assets/img/preview.webp"
-  >
+    <meta name="twitter:image" content="https://www.joseluismadrid.com/assets/img/preview.webp" />
 
-  <!-- ==========================
+    <!-- ==========================
        TÍTULO
   ========================== -->
 
-  <title>
-    Portafolio | Jose Luis Madrid Londoño | Desarrollador de Software
-  </title>
+    <title>Portafolio | Jose Luis Madrid Londoño | Desarrollador de Software</title>
 
-  <!-- ==========================
+    <!-- ==========================
        ANGULAR
   ========================== -->
 
-  <base href="/">
+    <base href="/" />
 
-  <!-- ==========================
+    <!-- ==========================
        GOOGLE TAG MANAGER
   ========================== -->
 
-  <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
 
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js',
+        });
 
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l !== 'dataLayer' ? '&l=' + l : '';
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== 'dataLayer' ? '&l=' + l : '';
 
-      j.async = true;
+        j.async = true;
 
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
 
-      f.parentNode.insertBefore(j, f);
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NVWBG853');
+    </script>
 
-    })(window, document, 'script', 'dataLayer', 'GTM-NVWBG853');
-  </script>
-
-  <!-- ==========================
+    <!-- ==========================
        GOOGLE ANALYTICS
   ========================== -->
 
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-EEBFH4ERQE">
-  </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEBFH4ERQE"></script>
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-    gtag('js', new Date());
+      gtag('js', new Date());
 
-    gtag('config', 'G-EEBFH4ERQE');
-  </script>
+      gtag('config', 'G-EEBFH4ERQE');
+    </script>
+  </head>
 
-</head>
-
-<body>
-
-  <!-- ==========================
+  <body>
+    <!-- ==========================
        GOOGLE TAG MANAGER NOSCRIPT
   ========================== -->
 
-  <noscript>
-    <iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-NVWBG853"
-      height="0"
-      width="0"
-      style="display:none;visibility:hidden">
-    </iframe>
-  </noscript>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NVWBG853"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      >
+      </iframe>
+    </noscript>
 
-  <!-- ==========================
+    <!-- ==========================
        ANGULAR APP
   ========================== -->
 
-  <app-root></app-root>
-
-  <!-- ==========================
-       SWEETALERT2
-  ========================== -->
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
-  </script>
-
-</body>
-
+    <app-root></app-root>
+  </body>
 </html>

@@ -11,6 +11,9 @@
     "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
     "serve:ssr": "node dist/portafolio/server/server.mjs",
     "serve:ssr:portafolio": "node dist/portafolio/server/server.mjs"
   },
@@ -34,12 +37,15 @@
     "@angular/build": "^21.2.14",
     "@angular/cli": "^21.2.14",
     "@angular/compiler-cli": "^21.2.0",
+    "@eslint/js": "^9.39.5",
     "@types/express": "^5.0.1",
     "@types/node": "^20.19.43",
+    "angular-eslint": "^21.4.0",
+    "eslint": "^9.39.5",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
-    "sitemap": "^9.0.1",
     "typescript": "~5.9.2",
+    "typescript-eslint": "^8.71.2",
     "vitest": "^4.0.8"
   }
 }
